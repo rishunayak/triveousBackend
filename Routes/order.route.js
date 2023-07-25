@@ -41,8 +41,19 @@ app.get("/:orderId",async(req,res)=>
 
     try
     {
+        
         const order=await Order.findById(orderId).populate("products.product")
-        res.status(200).send(order)
+        
+        if(order.user==req.body.id)
+        {
+            res.status(200).send(order)
+        }
+        else
+        {
+            res.send({msg:"its not your order"})
+        }
+        
+       
     }
     catch(e)
     {
