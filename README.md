@@ -22,7 +22,7 @@
         {
           "name:"Rishu Kumar Nayak",
           "email":"rishunayak22@gmail.com",
-          "password":"rishu"
+          "password":"Rr@887433"
         }
       
   - Response :- 
