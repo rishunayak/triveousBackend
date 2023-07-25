@@ -247,3 +247,75 @@
       ]
 
 
+
+## `(get) order/ : `
+
+
+- Headers
+
+      {
+        "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YmVkOGM5NDZlN2NhYzhmMDhkOTc4OSIsImlhdCI6MTY5MDIyODk1Nn0.kkX4yV2gEZO30pyz-WgJfoNjoWhzF5noAlAp6fUI_4k"
+      }
+    
+- Response
+
+      [
+       {
+       "_id": "64bf66b1bb6ad46b3e0c2f37",
+        "user": "64bed8c946e7cac8f08d9789",
+        "products": [
+      {
+        "product": {
+          "_id": "64bed7b89874c37162ae660e",
+          "title": "Men Printed Round Neck Cotton Blend Light Blue T-Shirt",
+          "price": 499,
+          "description": "Look confident with this Casual Men T-Shirt It is regular machine wash. This fabric is soft in touch and it makes feel so comfort when you wear. The fabric does not pill and the colour will not 
+              fade easily.Available in various color and designs for your every day fashion",
+          "availability": false,
+          "category": "64beba6885c6bddac8a3d0d5",
+          "__v": 0
+        },
+        "quantity": 2,
+        "_id": "64beda8d15ab8f4e5c7399e0"
+       }
+       ],
+          "totalAmount": 998,
+       "createdAt": "2023-07-25T06:07:45.377Z",
+       "__v": 0
+       },
+      ]
+
+## `(post) order/ : `
+- Headers
+
+      {
+        "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YmVkOGM5NDZlN2NhYzhmMDhkOTc4OSIsImlhdCI6MTY5MDIyODk1Nn0.kkX4yV2gEZO30pyz-WgJfoNjoWhzF5noAlAp6fUI_4k"
+      }
+
+  - Body
+    
+        {
+          products:[],
+          totalAmount:1000
+        }
+    
+   - Response
+ 
+         {
+             newOrder
+         }
+     
+
+## `(post) order/:orderId : `
+- Headers
+
+      {
+        "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YmVkOGM5NDZlN2NhYzhmMDhkOTc4OSIsImlhdCI6MTY5MDIyODk1Nn0.kkX4yV2gEZO30pyz-WgJfoNjoWhzF5noAlAp6fUI_4k"
+      }
+    
+   - Response
+ 
+         {
+             order
+         }
+     
