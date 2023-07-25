@@ -16,33 +16,34 @@
 # path
 
   ## `(post) user/register :`
-   
+
+  - Body
     
-      {
-        "name:"Rishu Kumar Nayak",
-        "email":"rishunayak22@gmail.com",
-        "password":"rishu"
-      }
+        {
+          "name:"Rishu Kumar Nayak",
+          "email":"rishunayak22@gmail.com",
+          "password":"rishu"
+        }
       
-  Response :- 
+  - Response :- 
        
         {msg:"Successfully Registered"}
       
   ## `(post) user/login :`
-   
+   - Body
 
-     {
-        "password":"rishu",
-        "email":"rishunayak22@gmail.com"
-     }  
+         {
+          "password":"rishu",
+           "email":"rishunayak22@gmail.com"
+         }  
      
-   Response  
+   - Response  
    
     {token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YmVkOGM5NDZlN2NhYzhmMDhkOTc4OSIsImlhdCI6MTY5MDIyODk1Nn0.kkX4yV2gEZO30pyz-WgJfoNjoWhzF5noAlAp6fUI_4k"}
 
 
    ## `(get) categorys/ :`
-   Response 
+  - Response 
    
       
            {
@@ -59,30 +60,30 @@
 
    ## `(get) products/category/:categoryId : (categoryId=64beba4885c6bddac8a3d0cf)`
 
-   Response
+   - Response
 
-     [
-      {
-        "_id": "64bed7d19874c37162ae6612",
-        "title": "SSC General Studies 6500 TCS MCQ Chapter Wise English Medium 4th Edition  (Paperback, Pinnacle Publications)",
-        "price": 499,
-        "description": "SSC General Studies 6500 TCS MCQ Chapter Wise English Medium 4th Edition",
-        "availability": true,
-        "category": {
-                      "_id": "64beba4885c6bddac8a3d0cf",
-                      "name": "Book",
-                      "__v": 0
+         [
+          {
+           "_id": "64bed7d19874c37162ae6612",
+           "title": "SSC General Studies 6500 TCS MCQ Chapter Wise English Medium 4th Edition  (Paperback, Pinnacle Publications)",
+           "price": 499,
+           "description": "SSC General Studies 6500 TCS MCQ Chapter Wise English Medium 4th Edition",
+           "availability": true,
+            "category": {
+                        "_id": "64beba4885c6bddac8a3d0cf",
+                        "name": "Book",
+                        "__v": 0
                    },
-       "__v": 0
-     }
-    ]
-
+            "__v": 0
+           }
+         ]
+   
 
 ## `(get) products/:productId : (productId=64bed7d19874c37162ae6612)`
 
-Response
+- Response
 
-    {
+      {
       "_id": "64bed7d19874c37162ae6612",
       "title": "SSC General Studies 6500 TCS MCQ Chapter Wise English Medium 4th Edition  (Paperback, Pinnacle Publications)",
       "price": 499,
@@ -93,13 +94,156 @@ Response
                    "name": "Book",
                    "__v": 0
                   },
-     "__v": 0
-    }
+         "__v": 0
+        }
 
+## `(get) cart/`
 
+- Headers
+
+      {
+        "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YmVkOGM5NDZlN2NhYzhmMDhkOTc4OSIsImlhdCI6MTY5MDIyODk1Nn0.kkX4yV2gEZO30pyz-WgJfoNjoWhzF5noAlAp6fUI_4k"
+      }
+- Response
+
+      [
+      {
+       "_id": "64beda543c89289f946c9bc6",
+       "user": "64bed8c946e7cac8f08d9789",
+       "items": [
+                 {
+                  "product": {
+                              "_id": "64bed7b89874c37162ae660e",
+                              "title": "Men Printed Round Neck Cotton Blend Light Blue T-Shirt",
+                              "price": 499,
+                              "description": "Look confident with this Casual Men T-Shirt It is regular machine wash. This fabric is soft in touch and it makes feel so comfort when you wear. The fabric does not pill and 
+                                              the colour will not fade easily.Available in various color and designs for your every day fashion",
+                             "availability": false,
+                             "category": "64beba6885c6bddac8a3d0d5",
+                             "__v": 0
+                           },
+              "quantity": 2,
+              "_id": "64beda8d15ab8f4e5c7399e0"
+             }
+           ],
+      "__v": 3
+      }
+      ]
     
   
+## `(post) cart/addToCart :`
+
+- Headers
+
+      {
+        "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YmVkOGM5NDZlN2NhYzhmMDhkOTc4OSIsImlhdCI6MTY5MDIyODk1Nn0.kkX4yV2gEZO30pyz-WgJfoNjoWhzF5noAlAp6fUI_4k"
+      }
+    
+- Body
+ 
+      {
+       productId:"64bed7b89874c37162ae660e"
+       quantity:1
+      }
 
 
+- Response
+
+      [
+      {
+       "_id": "64beda543c89289f946c9bc6",
+       "user": "64bed8c946e7cac8f08d9789",
+       "items": [
+                 {
+                  "product": {
+                              "_id": "64bed7b89874c37162ae660e",
+                              "title": "Men Printed Round Neck Cotton Blend Light Blue T-Shirt",
+                              "price": 499,
+                              "description": "Look confident with this Casual Men T-Shirt It is regular machine wash. This fabric is soft in touch and it makes feel so comfort when you wear. The fabric does not pill and 
+                                              the colour will not fade easily.Available in various color and designs for your every day fashion",
+                             "availability": false,
+                             "category": "64beba6885c6bddac8a3d0d5",
+                             "__v": 0
+                           },
+              "quantity": 3,
+              "_id": "64beda8d15ab8f4e5c7399e0"
+             }
+           ],
+      "__v": 3
+      }
+      ]
+  
+## `(patch) cart/updateCart/:itemId : (itemId=64bed7b89874c37162ae660e)`
+
+
+- Headers
+
+       {
+        "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YmVkOGM5NDZlN2NhYzhmMDhkOTc4OSIsImlhdCI6MTY5MDIyODk1Nn0.kkX4yV2gEZO30pyz-WgJfoNjoWhzF5noAlAp6fUI_4k"
+       }
+    
+- Body
+ 
+      {
+        quantity:1
+      }
+
+- Response
+
+
+      [
+      {
+       "_id": "64beda543c89289f946c9bc6",
+       "user": "64bed8c946e7cac8f08d9789",
+       "items": [
+                 {
+                  "product": {
+                              "_id": "64bed7b89874c37162ae660e",
+                              "title": "Men Printed Round Neck Cotton Blend Light Blue T-Shirt",
+                              "price": 499,
+                              "description": "Look confident with this Casual Men T-Shirt It is regular machine wash. This fabric is soft in touch and it makes feel so comfort when you wear. The fabric does not pill and 
+                                              the colour will not fade easily.Available in various color and designs for your every day fashion",
+                             "availability": false,
+                             "category": "64beba6885c6bddac8a3d0d5",
+                             "__v": 0
+                           },
+              "quantity": 1,
+              "_id": "64beda8d15ab8f4e5c7399e0"
+             }
+           ],
+      "__v": 3
+      }
+      ]
+
+
+
+
+
+
+## `(patch) cart/deleteItem/:itemId : (itemId=64bed7b89874c37162ae660e)`
+
+
+- Headers
+
+      {
+        "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YmVkOGM5NDZlN2NhYzhmMDhkOTc4OSIsImlhdCI6MTY5MDIyODk1Nn0.kkX4yV2gEZO30pyz-WgJfoNjoWhzF5noAlAp6fUI_4k"
+      }
+    
+- Body
+ 
+      {
+       itemId:"64bed7b89874c37162ae660e"
+      }
+
+- Response
+
+      [
+       {
+        "_id": "64beda543c89289f946c9bc6",
+        "user": "64bed8c946e7cac8f08d9789",
+        "items": [],
+        "__v": 3
+       }
+      ]
 
 
