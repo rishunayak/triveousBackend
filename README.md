@@ -11,11 +11,25 @@
 
  </div>
 
+ ## Routes for api
+
+```
+POST     /user/login
+POST     /user/register
+GET      /categorys
+GET      /products/category/:categoryId
+GET      /products/:productId
+GET      /cart
+POST     /cart/addToCart
+PATCH    /cart/updateCart/:itemId
+DELETE   /cart/deleteItem/:itemId
+```
 
 
-# path
 
-  ## `(post) user/register :`
+
+
+  # For User Registation  https://triveousbackend.onrender.com/user/register
 
   - Body
     
@@ -29,7 +43,8 @@
        
         {msg:"Successfully Registered"}
       
-  ## `(post) user/login :`
+  # For User Login  https://triveousbackend.onrender.com/user/login
+  
    - Body
 
          {
@@ -42,11 +57,12 @@
     {token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0YmVkOGM5NDZlN2NhYzhmMDhkOTc4OSIsImlhdCI6MTY5MDIyODk1Nn0.kkX4yV2gEZO30pyz-WgJfoNjoWhzF5noAlAp6fUI_4k"}
 
 
-   ## `(get) categorys/ :`
+   # For Getting All Category https://triveousbackend.onrender.com/categorys
+   
   - Response 
    
       
-           {
+           
             [
              {"_id":"64beba4885c6bddac8a3d0cf","name":"Book","__v":0},
              {"_id":"64beba5285c6bddac8a3d0d1","name":"Mobile","__v":0},
@@ -55,10 +71,10 @@
              {"_id":"64beba8c85c6bddac8a3d0d7","name":"Toys","__v":0},
              {"_id":"64bebaa085c6bddac8a3d0d9","name":"Beauty","__v":0}
             ]
-           }
+           
      
 
-   ## `(get) products/category/:categoryId : (categoryId=64beba4885c6bddac8a3d0cf)`
+   # For Getting All Product With Same Category https://triveousbackend.onrender.com/products/category/:categoryId
 
    - Response
 
@@ -79,7 +95,7 @@
          ]
    
 
-## `(get) products/:productId : (productId=64bed7d19874c37162ae6612)`
+# For Getting Specific product Details https://triveousbackend.onrender.com/products/:productId
 
 - Response
 
@@ -97,7 +113,7 @@
          "__v": 0
         }
 
-## `(get) cart/`
+# For Getting all cart details of the User https://triveousbackend.onrender.com/cart
 
 - Headers
 
@@ -131,7 +147,7 @@
       ]
     
   
-## `(post) cart/addToCart :`
+# For Adding Product To Cart https://triveousbackend.onrender.com/cart/addToCart
 
 - Headers
 
@@ -173,7 +189,7 @@
       }
       ]
   
-## `(patch) cart/updateCart/:itemId : (itemId=64bed7b89874c37162ae660e)`
+# For Updating Any Product in Cart https://triveousbackend.onrender.com/cart/updateCart/:itemId
 
 
 - Headers
@@ -220,7 +236,7 @@
 
 
 
-## `(patch) cart/deleteItem/:itemId : (itemId=64bed7b89874c37162ae660e)`
+# For Deleting Any Product from Cart https://triveousbackend.onrender.com/cart/deleteItem/:itemId
 
 
 - Headers
@@ -248,7 +264,7 @@
 
 
 
-## `(get) order/ : `
+#  For Getting User Order History https://triveousbackend.onrender.com/order
 
 
 - Headers
@@ -285,7 +301,7 @@
        },
       ]
 
-## `(post) order/ : `
+# For Ordering Product https://triveousbackend.onrender.com/order
 - Headers
 
       {
@@ -306,7 +322,7 @@
          }
      
 
-## `(post) order/:orderId : `
+# For Getting Details of Particular order https://triveousbackend.onrender.com/order/:orderId 
 - Headers
 
       {
